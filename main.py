@@ -1,8 +1,8 @@
 from aiogram import Bot, Dispatcher, types, executor
-from app.config import *
-from app.inlinebutton import *
-from app.button import *
-from app.text import *
+from config import *
+from inlinebutton import *
+from button import *
+from text import *
 
 bot = Bot(my_token)
 dp = Dispatcher(bot)
@@ -12,7 +12,7 @@ async def on_startup(_):
 
 @dp.message_handler(commands=['start'])
 async def start_command(message: types.Message):
-    await message.answer('')
+    await message.answer(start_text, parse_mode='HTML')
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
