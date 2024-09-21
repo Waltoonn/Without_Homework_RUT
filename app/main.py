@@ -1,5 +1,8 @@
 from aiogram import Bot, Dispatcher, types, executor
-from config import my_token
+from app.config import *
+from app.inlinebutton import *
+from app.button import *
+from app.text import *
 
 bot = Bot(my_token)
 dp = Dispatcher(bot)
